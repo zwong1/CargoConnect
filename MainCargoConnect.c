@@ -22,6 +22,7 @@ float wheelDiameterInMM;
 int reflectedLightIntensityOnBlack; 
 int reflectedLightIntensityOnWhite;  
 float widthBetweenWheelsInMM;  
+bool forwardMotorMovementIsPositive;
 
 task main()
 {
@@ -31,9 +32,11 @@ task main()
 	widthBetweenWheelsInMM = 96.72; 			// Width between wheels in mm.  Each lift arm width is 7.44mm wide 
 	reflectedLightIntensityOnBlack = 0;			// Color sensor reading when reading black.  
 	reflectedLightIntensityOnWhite = 100; 			// Color Sensor reading when reading white. 
-		
+	forwardMotorMovementIsPositive = false;  		// Do the encoders go posiitive when moving forward. (False = negative)	
+	
 	
 	// Line Follow For Rotations
 	lineFollowForRotations(8,30,1,1,true);
 
+	
 }
