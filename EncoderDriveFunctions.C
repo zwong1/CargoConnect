@@ -1,5 +1,5 @@
 //----------------------------------------------------------------------------------------------------
-// Name: driveRotation 
+// Name: driveEncoderDistance 
 //----------------------------------------------------------------------------------------------------
 // Description:  
 // 	This function takes a left speed, right speed, rotations to move and the brake mode
