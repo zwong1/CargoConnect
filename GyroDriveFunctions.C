@@ -1,5 +1,5 @@
 //----------------------------------------------------------------------------------------------------
-//
+//  Need inputs and comments
 //----------------------------------------------------------------------------------------------------
 void driveStraightGyroRotations(float direction, float speed, float rotations, bool brakeMode)
 {
@@ -50,7 +50,7 @@ void driveStraightGyroRotations(float direction, float speed, float rotations, b
 
 
 // ------------------------------------------------------------------------------
-//
+//   Need inputs and comments
 //----------------------------------------------------------------------------------------------------
 void centerTurnUsingGyro(float degreesToTurn, float speedOfTurn, bool brakeMode)
 {
