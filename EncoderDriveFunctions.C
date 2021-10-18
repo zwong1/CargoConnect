@@ -7,10 +7,10 @@
 // 	and then sets the brakes or coasts depending on the brake mode.
 //----------------------------------------------------------------------------------------------------
 //Inputs:
-//	leftSpeed - Float - Speed of left wheel
-//	rightSpeed - Float - Speed of the right wheel
-//	rotations - Float - distance to move
-//	brakeMode - Bool - True = Turn on brakes at the end;  False = Coast at the end
+//	leftSpeed	Float	Speed of left wheel
+//	rightSpeed	Float	Speed of the right wheel
+//	rotations	Float	Distance to move
+//	brakeMode	Bool	True = Turn on brakes at the end;  False = Coast at the end
 //----------------------------------------------------------------------------------------------------
 void driveEncoderDistance(float leftspeed, float rightSpeed, float rotationsToMove, bool brakeMode)
 {
