@@ -1,7 +1,7 @@
 //----------------------------------------------------------------------------------------------------
 //  Need inputs and comments
 //----------------------------------------------------------------------------------------------------
-void driveStraightGyroRotations(float direction, float speed, float rotations, bool brakeMode)
+void driveStraightGyroDistance(float direction, float speed, float rotations, bool brakeMode)
 {
 
 	// Dimensioning variables
