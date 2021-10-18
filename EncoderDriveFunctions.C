@@ -18,7 +18,7 @@ void driveEncoderDistance(float leftspeed, float rightSpeed, float rotationsToMo
 	float degreesToMove;
 
 
-	// Always make sure rotations is positive.
+	// Always make sure rotations is positive.  If it is negative, ignore it.   Needs to have negative speed to go backwards. 
 	if (rotationsToMove < 0)
 	{
 			rotationsToMove = -rotationsToMove;
