@@ -17,15 +17,21 @@
 #include "LineFollowingFunctions.C"
 
 
-// Global Variables
-Float wheelDiameter;  
-Float reflectedLightIntensityOnBlack; 
-Float reflectedLightIntensityOnWhite;  
+// Global Variables - These can be used anywhere in any function.  They are global in scope.  
+float wheelDiameter;  
+int reflectedLightIntensityOnBlack; 
+int reflectedLightIntensityOnWhite;  
 
 
 task main()
 {
 
+	// Setup parameters that may be different on different robots
+	wheelDiameter = 0.0;
+	reflectedLightIntensityOnBlack = 0;
+	reflectedLightIntensityOnWhite = 0; 
+		
+	
 	// Line Follow For Rotations
 	lineFollowForRotations(8,30,1,1,true);
 
