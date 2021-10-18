@@ -28,9 +28,9 @@ task main()
 
 	// Setup parameters that may be different on different robots
 	wheelDiameterInMM = 62.4;				// This is on the side of every lego wheel.   
+	widthBetweenWheelsInMM = 96.72; 			// Width between wheels in mm.  Each lift arm width is 7.44mm wide 
 	reflectedLightIntensityOnBlack = 0;			// Color sensor reading when reading white.  
 	reflectedLightIntensityOnWhite = 100; 			// Color Sensor reading when reading black. 
-	widthBetweenWheelsInMM = 96.72; 			// Width between wheels in mm.  Each lift arm width is 7.44mm wide 
 		
 	
 	// Line Follow For Rotations
