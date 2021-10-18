@@ -12,7 +12,7 @@
 //	rotations - Float - distance to move
 //	brakeMode - Bool - True = Turn on brakes at the end;  False = Coast at the end 
 //----------------------------------------------------------------------------------------------------
-void driveRotations(float leftspeed, float rightSpeed, float rotationsToMove, bool brakeMode)
+void driveEncoderDistance(float leftspeed, float rightSpeed, float rotationsToMove, bool brakeMode)
 {
 
 	float degreesToMove;
@@ -59,7 +59,7 @@ void driveRotations(float leftspeed, float rightSpeed, float rotationsToMove, bo
 //----------------------------------------------------------------------------------------------------
 //
 //----------------------------------------------------------------------------------------------------
-void driveStraightRotations(float speed, float rotationsToMove, bool brakeMode)
+void driveStraightEncoderDistance(float speed, float rotationsToMove, bool brakeMode)
 {
 
 	float error;
