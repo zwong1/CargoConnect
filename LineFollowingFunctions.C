@@ -1,7 +1,7 @@
 //----------------------------------------------------------------------------------------------------
 // follow a line using rotations
 //----------------------------------------------------------------------------------------------------
-void lineFollowForRotations(float rotations, float speed, int colorSensorToUse, int edgeToUse, bool brakeMode)
+void lineFollowForDistance(float rotations, float speed, int colorSensorToUse, int edgeToUse, bool brakeMode)
 
 {
 
