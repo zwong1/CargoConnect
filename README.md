@@ -3,6 +3,8 @@ Cargo Connect Robot C Code
 
 This it the robot setup for the code:
 
+Sensors
+----------------------------------------------------------------
 Sensor 1    Left Color Sensor
 
 Sensor 2    Attachment Color Sensor
@@ -10,6 +12,8 @@ Sensor 2    Attachment Color Sensor
 Sensor 3    Gyro Sensor
 
 Sensor 4    Right Color Sensor
+
+Motors
 ----------------------------------------------------------------
 Motor A     Left Attachment Motor
 
