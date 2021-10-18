@@ -55,8 +55,8 @@ void driveStraightGyroRotations(float direction, float speed, float rotations, b
 void centerTurnUsingGyro(float degreesToTurn, float speedOfTurn, bool brakeMode)
 {
 
-float gyroStartReading;							// The start value of the gyro
-float gyroEndReading;							// The value we want to end the while statement
+	float gyroStartReading;							// The start value of the gyro
+	float gyroEndReading;							// The value we want to end the while statement
 
 
 	// Get the starting gyroscope reading

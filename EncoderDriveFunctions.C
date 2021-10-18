@@ -1,16 +1,16 @@
 //----------------------------------------------------------------------------------------------------
-// Name: driveEncoderDistance 
+// Name: driveEncoderDistance
 //----------------------------------------------------------------------------------------------------
-// Description:  
+// Description:
 // 	This function takes a left speed, right speed, rotations to move and the brake mode
 // 	at the end and then drives at the speed for each motor for the number of rotations
 // 	and then sets the brakes or coasts depending on the brake mode.
 //----------------------------------------------------------------------------------------------------
-//Inputs: 
+//Inputs:
 //	leftSpeed - Float - Speed of left wheel
 //	rightSpeed - Float - Speed of the right wheel
 //	rotations - Float - distance to move
-//	brakeMode - Bool - True = Turn on brakes at the end;  False = Coast at the end 
+//	brakeMode - Bool - True = Turn on brakes at the end;  False = Coast at the end
 //----------------------------------------------------------------------------------------------------
 void driveEncoderDistance(float leftspeed, float rightSpeed, float rotationsToMove, bool brakeMode)
 {
