@@ -7,7 +7,7 @@ void sideTurnEncoder(float speed, float degreesToTurn, bool brakeMode)
 	float degreesToMove;
 
 	// Compute the degrees to move
-	degreesToMove = abs(degreesToTurn) * 3.3333333333;
+	degreesToMove = abs(degreesToTurn) * 3.376162;
 
 	// Remove the brakes if they are applied
 	setDriveMotorsToCoast();
@@ -56,7 +56,7 @@ void centerTurnEncoder(float speed, float degreesToTurn, bool brakeMode)
 	float degreesToMove;
 
 	// Compute the degrees to move
-	degreesToMove = abs(degreesToTurn) * 1.666666667;
+	degreesToMove = abs(degreesToTurn) * 1.688081;
 
 	// Remove the brakes if they are applied
 	setDriveMotorsToCoast();
