@@ -10,7 +10,7 @@ Sensor 2    Attachment Color Sensor
 Sensor 3    Gyro Sensor
 
 Sensor 4    Right Color Sensor
-
+----------------------------------------------------------------
 Motor A     Left Attachment Motor
 
 Motor B     Right Drive Motor 
