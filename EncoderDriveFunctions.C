@@ -3,8 +3,10 @@
 //----------------------------------------------------------------------------------------------------
 // Description:
 // 	This function takes a left speed, right speed, rotations to move and the brake mode
-// 	at the end and then drives at the speed for each motor for the number of rotations
-// 	and then sets the brakes or coasts depending on the brake mode.
+// 	and then drives at the speed for each motor for the number of rotations.
+// 	When it is finished, it then sets the brakes or coasts depending on the brake mode.
+//      The wheel diameter of the robot is 62.4mm, which is 2.456693 inches.
+//      Wheel circumfrence is Pi x Diameter = 2.456693 x 3.14159 = 7.717922162 inches per ratation.  
 //----------------------------------------------------------------------------------------------------
 //Inputs:
 //	leftSpeed	Float	Speed of left wheel
