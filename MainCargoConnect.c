@@ -29,7 +29,7 @@ task main()
 	// Setup parameters that may be different on different robots
 	wheelDiameterInMM = 62.4;				// This is on the side of every lego wheel.   
 	reflectedLightIntensityOnBlack = 0;
-	reflectedLightIntensityOnWhite = 0; 
+	reflectedLightIntensityOnWhite = 100; 			
 		
 	
 	// Line Follow For Rotations
