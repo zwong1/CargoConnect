@@ -20,7 +20,7 @@ void driveStraightGyroDistance(float direction, float speed, float inches, bool 
 	float rotations;
 	
 	
-	rotations = inches/7.78
+	rotations = inches/7.78;
 
 	// Increase the gain if the speed is greater
 	gain = .01 * speed;
