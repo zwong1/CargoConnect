@@ -20,7 +20,7 @@ void driveEncoderDistance(float leftspeed, float rightSpeed, float inchesToMove,
 	float degreesToMove;
 	float rotationsToMove;
 	
-	rotationsToMove = inchesToMove * 7.78;
+	rotationsToMove = inchesToMove/7.78;
 
 	// Always make sure rotations is positive.  If it is negative, ignore it.   Needs to have negative speed to go backwards. 
 	if (rotationsToMove < 0)
@@ -79,7 +79,7 @@ void driveStraightEncoderDistance(float speed, float inchesToMove, bool brakeMod
 	float degreesToMove;
 	float rotationsToMove;
 
-	rotationsToMove = inchesToMove * 7.78;
+	rotationsToMove = inchesToMove/7.78;
 	
 	// Always make sure rotations is positive.
 	if (rotationsToMove < 0)
