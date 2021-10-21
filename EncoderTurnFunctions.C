@@ -1,11 +1,18 @@
 //----------------------------------------------------------------------------------------------------
-// Name: 
+// Name: encoderTurnFunctions
 //----------------------------------------------------------------------------------------------------
-// Description:
-//
+// Description: Finds how much we want to move (in degrees). Gets rid of the brakes if they are on.
+// resets the moter encoder. Check if we want to turn left or right by seeing if the degreesToTurn is 
+// greater than or equal to 0. If we are turning to the right, the right wheel isn't moving and the
+// left wheel is moving at the speed we want it to. If we are turning to the left, the left wheel is 
+// stopped and the right wheel is moving at the speed we want. We wait for the left motor encoder to 
+// be greater than or equal to the degreesToMove. Because we are stopped on the left or right encoder,
+// we can add them together because one will always be zero. Turns off motors.
 //----------------------------------------------------------------------------------------------------
 //Inputs:
-//
+//	speed   	Float	Speed of the right wheel
+//	degreesToTurn	Float	Distance to move
+//	brakeMode	Bool	True = Turn on brakes at the end;  False = Coast at the end
 //----------------------------------------------------------------------------------------------------
 void sideTurnEncoder(float speed, float degreesToTurn, bool brakeMode)
 {
@@ -52,15 +59,21 @@ void sideTurnEncoder(float speed, float degreesToTurn, bool brakeMode)
 	setBrakeMode(brakeMode);
 
 }
-
 //----------------------------------------------------------------------------------------------------
-// Name: 
+// Name: centerTurnEncoder
 //----------------------------------------------------------------------------------------------------
-// Description:
-//
+// Description: 
+// Finds how much we want to move (in degrees). Gets rid of the brakes if they are on. Resets the motor
+// encoder. Check if we want to turn left or right by seeing if the degreesToTurn is greater than or
+// equal to 0. If we are turning to the right, the left motor is forward and the right motor is going 
+// backwards. If we are turning to the left, the left motor is backwards and the right motor is going 
+// forwards. Wait until the left motor encoder is greater than or equal to the degrees to move. Turns
+// off motors.
 //----------------------------------------------------------------------------------------------------
 //Inputs:
-//
+//	speed   	Float	Speed of the right wheel
+//	degreesToTurn	Float	Distance to move
+//	brakeMode	Bool	True = Turn on brakes at the end;  False = Coast at the end
 //----------------------------------------------------------------------------------------------------
 void centerTurnEncoder(float speed, float degreesToTurn, bool brakeMode)
 {
