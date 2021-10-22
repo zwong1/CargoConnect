@@ -82,24 +82,13 @@ void centerTurnUsingGyro(float degreesToTurn, float speedOfTurn, bool brakeMode)
 	gyroEndReading = gyroStartReading + degreesToTurn - 10;
 
 
-	if (degreesToTurn >= 0)												// Turning to the right
+	if (degreesToTurn > 0)												// Turning to the right
 	{
 
 		setMotorSpeed(leftDrive, speedOfTurn);
 		setMotorSpeed(rightDrive, -speedOfTurn);
-
-	}
-	else																// Turning to the left
-	{
-
-		setMotorSpeed(leftDrive, -speedOfTurn);
-		setMotorSpeed(rightDrive, speedOfTurn);
-
-
-	}
-
-
-	while (getGyroDegrees(gyro) <= gyroEndReading)
+		
+		while (getGyroDegrees(gyro) < gyroEndReading)
 	{
 
 	}
@@ -110,6 +99,31 @@ void centerTurnUsingGyro(float degreesToTurn, float speedOfTurn, bool brakeMode)
 
 	setBrakeMode(brakeMode);
 
+
+	}
+	else																// Turning to the left
+	{
+
+		setMotorSpeed(leftDrive, -speedOfTurn);
+		setMotorSpeed(rightDrive, speedOfTurn);
+		
+		while (getGyroDegrees(gyro) > gyroEndReading)
+	{
+
+	}
+
+
+	turnOffDriveMotors();
+
+
+	setBrakeMode(brakeMode);
+
+
+
+	}
+
+
+	
 }
 void sideTurnUsingGyro(float degreesToTurn, float speedOfTurn, bool brakeMode)
 {
