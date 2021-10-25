@@ -42,15 +42,15 @@ task main()
 	sleep(100);
 
 	// Drive straight using the gyro to get on top of the line to follow
-	driveStraightGyroDistance(0, 50, 2.2, false);
+	driveStraightGyroDistance(0, 50, 17, false);
 
 	// Line follow for distance
-	lineFollowForDistance(2,15,2,2,false);
+	lineFollowForDistance(15.5,15,2,2,false);
 
-	// LIne follow until we see the white line
+	// LIne follow until we see the white line 
 	lineFollowUntilLine(10, 2, 2, false, 1);
 
-	// Line follow until we see the black line
+	// Line follow until we see the black line 
 	lineFollowUntilLine(10, 2, 2, true, 2);
 
 

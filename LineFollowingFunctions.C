@@ -7,7 +7,7 @@
 //Inputs:
 //
 //----------------------------------------------------------------------------------------------------
-void lineFollowForDistance(float rotations, float speed, int colorSensorToUse, int edgeToUse, bool brakeMode)
+void lineFollowForDistance(float inchesToMove, float speed, int colorSensorToUse, int edgeToUse, bool brakeMode)
 
 {
 
@@ -20,9 +20,11 @@ void lineFollowForDistance(float rotations, float speed, int colorSensorToUse, i
 	float gain;
 	float colorSensorReading;
 	float midPoint;
-
-
-	midPoint = 55;
+	float roations; 
+	
+	// Compute the midpoint with the global variables.   
+	midPoint = (reflectedLightIntensityOnBlack + reflectedLightIntensityOnWhite) / 2;
+	
 	gain = .01 * speed;
 
 
@@ -30,6 +32,9 @@ void lineFollowForDistance(float rotations, float speed, int colorSensorToUse, i
 	resetMotorEncoder(leftDrive);
 	resetMotorEncoder(rightDrive);
 
+	// Compute the rotations to move
+	rotations = inchesToMove * 7.717922162;
+	
 	// compute degrees wheel needs to move
 	degreesToMove = rotations * 360;
 
@@ -109,7 +114,7 @@ void lineFollowUntilLine(float speed, int colorSensorToUse, int edgeToUse, bool 
 
 	
 	// Compute the midpoint with the global variables.   
-	midPoint = (reflectedLightIntensityOnBlack + reflectedLightIntensityOnWhite)/2;
+	midPoint = (reflectedLightIntensityOnBlack + reflectedLightIntensityOnWhite) / 2;
 
 	// Set the gain to increase with speed. 
 	gain = .01 * speed;
