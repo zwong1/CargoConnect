@@ -20,7 +20,7 @@ void sideTurnEncoder(float speed, float degreesToTurn, bool brakeMode)
 	float degreesToMove;
 
 	// Compute the degrees to move
-	degreesToMove = (degreesToTurn) * 3.376162; 
+	degreesToMove = (degreesToTurn) * 3.376162;
 // Constants put in by others (not Zach, Emilia, and Solomon)
 // The constant 3.376162 is the degrees the wheel turns for every 1 degree the robot turns.
 
@@ -33,29 +33,30 @@ void sideTurnEncoder(float speed, float degreesToTurn, bool brakeMode)
 	if (degreesToTurn > 0)					// Turning to the right  - right wheel stopped left wheel set to speed
 
 	{
-	while(getLeftMotorEncoder>degreesToMove){
+
 		setMotorSpeed(leftDrive, speed);
 		setMotorSpeed(rightDrive, 0);
 
+		while(getLeftMotorEncoder() > degreesToMove)
+		{
+
+		}
+
+
 	}
-
-
-
 	else							// Turning to the left  - left wheel stopped right wheel set to speed
 
-
 	{
-	while(getRightMotorEncoder() < degreesToMove){
 
 		setMotorSpeed(leftDrive, 0);
 		setMotorSpeed(rightDrive, speed);
 
-	}
-}
+
+		while(getRightMotorEncoder() < degreesToMove)
+		{
 
 
-
-
+		}
 	}
 
 

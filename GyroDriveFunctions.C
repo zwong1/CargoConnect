@@ -18,8 +18,8 @@ void driveStraightGyroDistance(float direction, float speed, float inches, bool 
 	float degreesToMove;
 	float gain;
 	float rotations;
-	
-	
+
+
 	rotations = inches / 7.717922162;
 
 	// Increase the gain if the speed is greater
@@ -89,34 +89,34 @@ void centerTurnUsingGyro(float degreesToTurn, float speedOfTurn, bool brakeMode)
 		setMotorSpeed(rightDrive, -speedOfTurn);
 
 		while (getGyroDegrees(gyro) < gyroEndReading)
-	{
+		{
+
+		}
+
+
+		turnOffDriveMotors();
+
+
+		setBrakeMode(brakeMode);
+
 
 	}
-
-
-	turnOffDriveMotors();
-
-
-	setBrakeMode(brakeMode);
-
-
-	}
-	else																// Turning to the left
+	else																				// Turning to the left
 	{
 
 		setMotorSpeed(leftDrive, -speedOfTurn);
 		setMotorSpeed(rightDrive, speedOfTurn);
 
 		while (getGyroDegrees(gyro) > gyroEndReading)
-	{
+		{
 
-	}
-
-
-	turnOffDriveMotors();
+		}
 
 
-	setBrakeMode(brakeMode);
+		turnOffDriveMotors();
+
+
+		setBrakeMode(brakeMode);
 
 
 

@@ -20,11 +20,11 @@ void lineFollowForDistance(float inchesToMove, float speed, int colorSensorToUse
 	float gain;
 	float colorSensorReading;
 	float midPoint;
-	float roations; 
-	
-	// Compute the midpoint with the global variables.   
+	float rotations;
+
+	// Compute the midpoint with the global variables.
 	midPoint = (reflectedLightIntensityOnBlack + reflectedLightIntensityOnWhite) / 2;
-	
+
 	gain = .01 * speed;
 
 
@@ -34,7 +34,7 @@ void lineFollowForDistance(float inchesToMove, float speed, int colorSensorToUse
 
 	// Compute the rotations to move
 	rotations = inchesToMove * 7.717922162;
-	
+
 	// compute degrees wheel needs to move
 	degreesToMove = rotations * 360;
 
@@ -112,15 +112,15 @@ void lineFollowUntilLine(float speed, int colorSensorToUse, int edgeToUse, bool 
 	float lightLevelToLookFor;
 	float colorSensorDetecting;
 
-	
-	// Compute the midpoint with the global variables.   
+
+	// Compute the midpoint with the global variables.
 	midPoint = (reflectedLightIntensityOnBlack + reflectedLightIntensityOnWhite) / 2;
 
-	// Set the gain to increase with speed. 
+	// Set the gain to increase with speed.
 	gain = .01 * speed;
 
 
-	// Compute the limtis for stopping;  
+	// Compute the limtis for stopping;
 	if (colorToLookFor == 1)     // Look for white
 	  {
 	    lightLevelToLookFor = reflectedLightIntensityOnWhite - 10;
@@ -133,7 +133,7 @@ void lineFollowUntilLine(float speed, int colorSensorToUse, int edgeToUse, bool 
 
 
 
-	// Get the initial current value based upon which sensor to use - Use the one not using for the line following 
+	// Get the initial current value based upon which sensor to use - Use the one not using for the line following
 	if (colorSensorToUse == 1)				// Use the left color sensor
 		{
 			colorSensorDetecting = getColorReflected(rightColor);
@@ -150,11 +150,11 @@ void lineFollowUntilLine(float speed, int colorSensorToUse, int edgeToUse, bool 
 	/* move forward until the encoder value is greater then the degrees to move
 		&&  	Logical And
 		+	Logical Or
-		!=  	Not Equal To 
+		!=  	Not Equal To
 	*/
-	// If looking for white, continue while the sensor is less than the limit. 
-	// If looking for black, continue while the sensor is greater than the limit.  
-	//	   Looking for White  and  Current Sensor Value < Limit  		or    Looking for Black  and   Current Sensor Value > Limit 
+	// If looking for white, continue while the sensor is less than the limit.
+	// If looking for black, continue while the sensor is greater than the limit.
+	//	   Looking for White  and  Current Sensor Value < Limit  		or    Looking for Black  and   Current Sensor Value > Limit
 	while (((colorToLookFor == 1) && ( colorSensorDetecting < lightLevelToLookFor)) + ((colorToLookFor != 1) && ( colorSensorDetecting > lightLevelToLookFor)))
 	{
 
@@ -191,8 +191,8 @@ void lineFollowUntilLine(float speed, int colorSensorToUse, int edgeToUse, bool 
 		setMotorSpeed(leftDrive, speedLeft);
 		setMotorSpeed(rightDrive, speedRight);
 
-		
-		// Get the current value based upon which sensor to use - Use the one not using for the line following 
+
+		// Get the current value based upon which sensor to use - Use the one not using for the line following
 		if (colorSensorToUse == 1)				// Use the left color sensor
 		{
 			colorSensorDetecting = getColorReflected(rightColor);
