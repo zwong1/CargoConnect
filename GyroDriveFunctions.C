@@ -162,10 +162,10 @@ void sideTurnUsingGyro(float degreesToTurn, float speedOfTurn, bool brakeMode)
 		}
 
 
-	turnOffDriveMotors();
+		turnOffDriveMotors();
 
 
-	setBrakeMode(brakeMode);
+		setBrakeMode(brakeMode);
 
 
 	}
@@ -178,9 +178,7 @@ void sideTurnUsingGyro(float degreesToTurn, float speedOfTurn, bool brakeMode)
 		while (getGyroDegrees(gyro) > gyroEndReading)
 		{
 
-
 		}
-
 
 	}
 
@@ -189,7 +187,6 @@ void sideTurnUsingGyro(float degreesToTurn, float speedOfTurn, bool brakeMode)
 
 
 	setBrakeMode(brakeMode);
-
 
 
 }
