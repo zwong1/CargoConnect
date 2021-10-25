@@ -48,8 +48,12 @@ lineFollowForDistance(inchesToMove, speed, colorSensorToUse, edgeToUse, brakeMod
 
 lineFollowUntilLine(speed, colorSensorToUse, edgeToUse, brakeMode, colorToLookFor)
 
-	colorSensorToUse - 1=Left; 2 = Right        Color sensor used to line folllow - Assume opposite to line detection
+	speed - 		Speed to Drive
 	
-	edgeToUSe = 1 = left edge; 2 = right edge
+	colorSensorToUse - 	Color sensor used to line folllow - opposite for line detection		1=Left; 2 = Right        
 	
-	colorToLookFor -  1 = White; 2 = Black 
+	edgeToUSe - 											1 = left edge; 2 = right edge
+	
+	brakeMode 		Apply brakes or not							true; false
+	
+	colorToLookFor -  										1 = White; 2 = Black 
