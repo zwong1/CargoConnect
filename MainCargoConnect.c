@@ -42,7 +42,7 @@ task main()
 	sleep(100);
 
 	// Drive straight using the gyro to get on top of the line to follow
-	driveStraightGyroDistance(0, 50, 2.2, false);
+	driveStraightGyroDistance(0, 50, 17, false);
 
 	// Line follow for distance
 	lineFollowForDistance(2,15,2,2,false);
