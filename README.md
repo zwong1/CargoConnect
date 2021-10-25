@@ -24,14 +24,22 @@ Motor C - Left Drive Motor
 Motor D - Right Attachment Motor 
 
 
-Functions
+Driving Functions
 ----------------------------------------------------------------
 driveEncoderDistance(leftspeed, rightSpeed, inchesToMove, brakeMode)
+
 driveStraightEncoderDistance(speed, inchesToMove, brakeMode)
+
 sideTurnEncoder(speed, degreesToTurn, brakeMode)
+
 centerTurnEncoder(speed, degreesToTurn, brakeMode)
+
 driveStraightGyroDistance(direction, speed, inches, brakeMode)
+
 centerTurnUsingGyro(degreesToTurn, speedOfTurn, brakeMode)
+
 sideTurnUsingGyro(degreesToTurn, speedOfTurn, brakeMode)
+
 lineFollowForDistance(inchesToMove, speed, colorSensorToUse, edgeToUse, brakeMode)
+
 lineFollowUntilLine(speed, colorSensorToUse, edgeToUse, brakeMode, colorToLookFor)
