@@ -7,7 +7,7 @@ Sensors
 ----------------------------------------------------------------
 	Sensor 1 - Left Color Sensor
 
-	Sensor 2 - Attachment Color Sensor
+	Sensor 2 - Extra Color Sensor
 
 	Sensor 3 - Gyro Sensor
 
