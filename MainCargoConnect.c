@@ -37,26 +37,21 @@ task main()
 	forwardMotorMovementIsPositive = false;  		// Do the encoders go posiitive when moving forward. (False = negative)
 
 
-
+	// Reset the gyroscoe and wait 100ms to settle
 	resetGyro(gyro);
 	sleep(100);
 
+	// Drive straight using the gyro to get on top of the line to follow
+	driveStraightGyroDistance(0, 50, 2.2, false);
 
-	driveStraightGyroDistance(0, 50, 2.2, true);
+	// Line follow for distance
+	lineFollowForDistance(2,15,2,2,false);
 
+	// LIne follow until we see the white line 
+	lineFollowUntilLine(10, 2, 2, false, 1)
 
-	lineFollowForDistance(2,15,2,2,true);
-
-
-	lineFollowUntilLine(10, 2, 2, true, 1)
-
-
+	// Line follow until we see the black line 
 	lineFollowUntilLine(10, 2, 2, true, 2)
-
-
-	// Line Follow For Rotations
-	// lineFollowUntilLine(10,2,2,true,1);
-
 
 
 }
