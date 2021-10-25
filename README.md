@@ -52,8 +52,8 @@ lineFollowUntilLine(speed, colorSensorToUse, edgeToUse, brakeMode, colorToLookFo
 	
 	colorSensorToUse - 	Color sensor used to line folllow - opposite for line detection		1=Left; 2 = Right        
 	
-	edgeToUSe - 											1 = left edge; 2 = right edge
+	edgeToUSe - 		foloow on left edge or right edge					1 = left edge; 2 = right edge
 	
 	brakeMode 		Apply brakes or not							true; false
 	
-	colorToLookFor -  										1 = White; 2 = Black 
+	colorToLookFor -  	Look for a white line or a black line					1 = White; 2 = Black 
