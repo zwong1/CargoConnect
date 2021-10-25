@@ -107,25 +107,28 @@ void lineFollowUntilLine(float speed, int colorSensorToUse, int edgeToUse, bool 
 	float lightLevelToLookFor;
 	float colorSensorDetecting;
 
+	
+	// Compute the midpoint with the global variables.   
 	midPoint = (reflectedLightIntensityOnBlack + reflectedLightIntensityOnWhite)/2;
+
+	// Set the gain to increase with speed. 
 	gain = .01 * speed;
 
 
-
-
+	// Compute the limtis for stopping;  
 	if (colorToLookFor == 1)     // Look for white
-  {
-    lightLevelToLookFor = reflectedLightIntensityOnWhite - 10;
-  }
-  else
-  {
-    lightLevelToLookFor = reflectedLightIntensityOnBlack + 10;
-  }
+	  {
+	    lightLevelToLookFor = reflectedLightIntensityOnWhite - 10;
+	  }
+	  else
+	  {
+	    lightLevelToLookFor = reflectedLightIntensityOnBlack + 10;
+	  }
 
 
 
 
-
+	// Get the initial current value based upon which sensor to use - Use the one not using for the line following 
 	if (colorSensorToUse == 1)				// Use the left color sensor
 		{
 			colorSensorDetecting = getColorReflected(rightColor);
@@ -139,11 +142,16 @@ void lineFollowUntilLine(float speed, int colorSensorToUse, int edgeToUse, bool 
 
 
 
-	// move forward until the encoder value is greater then the degrees to move
+	/* move forward until the encoder value is greater then the degrees to move
+		&&  	Logical And
+		+	Logical Or
+		!=  	Not Equal To 
+	*/
+	// If looking for white, continue while the sensor is less than the limit. 
+	// If looking for black, continue while the sensor is greater than the limit.  
+	//	   Looking for White  and  Current Sensor Value < Limit  		or    Looking for Black  and   Current Sensor Value > Limit 
 	while (((colorToLookFor == 1) && ( colorSensorDetecting < lightLevelToLookFor)) + ((colorToLookFor != 1) && ( colorSensorDetecting > lightLevelToLookFor)))
 	{
-
-
 
 		if (colorSensorToUse == 1)				// Use the left color sensor
 		{
@@ -174,10 +182,12 @@ void lineFollowUntilLine(float speed, int colorSensorToUse, int edgeToUse, bool 
 
 		}
 
+		// Set the new drive speeds
 		setMotorSpeed(leftDrive, speedLeft);
 		setMotorSpeed(rightDrive, speedRight);
 
-
+		
+		// Get the current value based upon which sensor to use - Use the one not using for the line following 
 		if (colorSensorToUse == 1)				// Use the left color sensor
 		{
 			colorSensorDetecting = getColorReflected(rightColor);
@@ -192,9 +202,10 @@ void lineFollowUntilLine(float speed, int colorSensorToUse, int edgeToUse, bool 
 
 	}
 
-
+	// Turn off motors
 	turnOffDriveMotors();
 
+	// Set brake mode
 	setBrakeMode(brakeMode);
 
 
