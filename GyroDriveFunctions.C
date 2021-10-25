@@ -125,7 +125,17 @@ void centerTurnUsingGyro(float degreesToTurn, float speedOfTurn, bool brakeMode)
 
 	
 }
-void sideTurnUsingGyro(float degreesToTurn, float speedOfTurn, bool brakeMode)
+
+
+//----------------------------------------------------------------------------------------------------
+// Name: 
+//----------------------------------------------------------------------------------------------------
+// Description:
+//
+//----------------------------------------------------------------------------------------------------
+//Inputs:
+//
+//----------------------------------------------------------------------------------------------------void sideTurnUsingGyro(float degreesToTurn, float speedOfTurn, bool brakeMode)
 {
 
 	float gyroStartReading;							// The start value of the gyro
