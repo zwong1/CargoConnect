@@ -1,5 +1,5 @@
 //----------------------------------------------------------------------------------------------------
-// Name: 
+// Name:
 //----------------------------------------------------------------------------------------------------
 // Description:
 //
@@ -18,8 +18,8 @@ void driveStraightGyroDistance(float direction, float speed, float inches, bool 
 	float degreesToMove;
 	float gain;
 	float rotations;
-	
-	
+
+
 	rotations = inches/7.78;
 
 	// Increase the gain if the speed is greater
@@ -60,7 +60,7 @@ void driveStraightGyroDistance(float direction, float speed, float inches, bool 
 
 
 //----------------------------------------------------------------------------------------------------
-// Name: 
+// Name:
 //----------------------------------------------------------------------------------------------------
 // Description:
 //
@@ -87,7 +87,7 @@ void centerTurnUsingGyro(float degreesToTurn, float speedOfTurn, bool brakeMode)
 
 		setMotorSpeed(leftDrive, speedOfTurn);
 		setMotorSpeed(rightDrive, -speedOfTurn);
-		
+
 		while (getGyroDegrees(gyro) < gyroEndReading)
 	{
 
@@ -106,7 +106,7 @@ void centerTurnUsingGyro(float degreesToTurn, float speedOfTurn, bool brakeMode)
 
 		setMotorSpeed(leftDrive, -speedOfTurn);
 		setMotorSpeed(rightDrive, speedOfTurn);
-		
+
 		while (getGyroDegrees(gyro) > gyroEndReading)
 	{
 
@@ -123,12 +123,12 @@ void centerTurnUsingGyro(float degreesToTurn, float speedOfTurn, bool brakeMode)
 	}
 
 
-	
+
 }
 
 
 //----------------------------------------------------------------------------------------------------
-// Name: 
+// Name:
 //----------------------------------------------------------------------------------------------------
 // Description:
 //
@@ -155,11 +155,11 @@ void sideTurnUsingGyro(float degreesToTurn, float speedOfTurn, bool brakeMode)
 
 		setMotorSpeed(leftDrive, speedOfTurn);
 		setMotorSpeed(rightDrive, 0);
-		
-		while (getGyroDegrees(gyro) < gyroEndReading)
-	{
 
-	}
+		while (getGyroDegrees(gyro) < gyroEndReading)
+		{
+
+		}
 
 
 	turnOffDriveMotors();
@@ -174,8 +174,12 @@ void sideTurnUsingGyro(float degreesToTurn, float speedOfTurn, bool brakeMode)
 
 		setMotorSpeed(leftDrive, 0);
 		setMotorSpeed(rightDrive, speedOfTurn);
-		
+
 		while (getGyroDegrees(gyro) > gyroEndReading)
+		{
+
+
+		}
 
 
 	}
@@ -186,9 +190,6 @@ void sideTurnUsingGyro(float degreesToTurn, float speedOfTurn, bool brakeMode)
 
 	setBrakeMode(brakeMode);
 
-
-
-	
 
 
 }

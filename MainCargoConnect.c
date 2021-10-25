@@ -10,15 +10,15 @@
 
 
 
-// Global Variables - These can be used anywhere in any function.  They are global in scope.  
-float wheelDiameterInMM;  
-int reflectedLightIntensityOnBlack; 
-int reflectedLightIntensityOnWhite;  
-float widthBetweenWheelsInMM;  
+// Global Variables - These can be used anywhere in any function.  They are global in scope.
+float wheelDiameterInMM;
+int reflectedLightIntensityOnBlack;
+int reflectedLightIntensityOnWhite;
+float widthBetweenWheelsInMM;
 bool forwardMotorMovementIsPositive;
 
 
-// Files to Include  
+// Files to Include
 #include "MiscDriveFunctions.C"
 #include "GyroDriveFunctions.C"
 #include "EncoderDriveFunctions.C"
@@ -47,11 +47,11 @@ task main()
 	// Line follow for distance
 	lineFollowForDistance(2,15,2,2,false);
 
-	// LIne follow until we see the white line 
-	lineFollowUntilLine(10, 2, 2, false, 1)
+	// LIne follow until we see the white line
+	lineFollowUntilLine(10, 2, 2, false, 1);
 
-	// Line follow until we see the black line 
-	lineFollowUntilLine(10, 2, 2, true, 2)
+	// Line follow until we see the black line
+	lineFollowUntilLine(10, 2, 2, true, 2);
 
 
 }
