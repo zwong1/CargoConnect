@@ -61,7 +61,7 @@ void driveEncoderDistance(float leftspeed, float rightSpeed, float inchesToMove,
 
 
 //----------------------------------------------------------------------------------------------------
-// Name: 
+// Name:    THis is a new description
 //----------------------------------------------------------------------------------------------------
 // Description:
 //
