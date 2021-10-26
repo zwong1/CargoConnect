@@ -18,6 +18,9 @@ void sideTurnEncoder(float speed, float degreesToTurn, bool brakeMode)
 {
 
 	float degreesToMove;
+	float momentum;
+	
+	momentum = (speed/5);
 
 	// Compute the degrees to move
 	degreesToMove = (degreesToTurn) * 3.376162;
