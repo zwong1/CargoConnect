@@ -72,8 +72,10 @@ void centerTurnUsingGyro(float degreesToTurn, float speedOfTurn, bool brakeMode)
 {
 
 	float gyroStartReading;							// The start value of the gyro
-	float gyroEndReading;							// The value we want to end the while statement
-
+	float gyroEndReading;	// The value we want to end the while statement
+	float momentum;
+	
+	momentum = (speed/5);
 
 	// Get the starting gyroscope reading
 	gyroStartReading = getGyroDegrees(gyro);
@@ -141,7 +143,9 @@ void sideTurnUsingGyro(float degreesToTurn, float speedOfTurn, bool brakeMode)
 
 	float gyroStartReading;							// The start value of the gyro
 	float gyroEndReading;							// The value we want to end the while statement
-
+	float momentum;
+	
+	momentum = (speed/5);
 
 	// Get the starting gyroscope reading
 	gyroStartReading = getGyroDegrees(gyro);
