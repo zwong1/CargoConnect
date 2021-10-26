@@ -147,12 +147,13 @@ void sideTurnUsingGyro(float degreesToTurn, float speedOfTurn, bool brakeMode)
 	gyroStartReading = getGyroDegrees(gyro);
 
 	// Compute the end reading
-	gyroEndReading = gyroStartReading + degreesToTurn - 10;
+	
+// the constant 10 will change with speed because momentum increases with speed
 
-
-	if (degreesToTurn >= 0)												// Turning to the right
+	if (degreesToTurn > 0)												// Turning to the right
 	{
-
+		gyroEndReading = abs(gyroStartReading) + degreesToTurn - 10; // If the gyro reads negative degrees, then the end reading will be wrong, it will also be wrong if the degrees to turn
+	// is less than 0
 		setMotorSpeed(leftDrive, speedOfTurn);
 		setMotorSpeed(rightDrive, 0);
 
@@ -171,13 +172,14 @@ void sideTurnUsingGyro(float degreesToTurn, float speedOfTurn, bool brakeMode)
 	}
 	else																// Turning to the left
 	{
-
+		gyroEndReading = abs(gyroStartReading) - degreesToTurn + 10;
+		
 		setMotorSpeed(leftDrive, 0);
 		setMotorSpeed(rightDrive, speedOfTurn);
 
 		while (getGyroDegrees(gyro) > gyroEndReading)
 		{
-
+		
 		}
 
 	}
