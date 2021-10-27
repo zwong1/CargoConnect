@@ -10,9 +10,9 @@
 // we can add them together because one will always be zero. Turns off motors.
 //----------------------------------------------------------------------------------------------------
 //Inputs:
-//	speed   	Float	Speed of the right wheel
-//	degreesToTurn	Float	Distance to move
-//	brakeMode	Bool	True = Turn on brakes at the end;  False = Coast at the end
+//	speed   				Float		Speed of the wheel to turn
+//	degreesToTurn		Float		degrees to turn
+//	brakeMode	Bool	True 		Turn on brakes at the end;  False = Coast at the end
 //----------------------------------------------------------------------------------------------------
 void sideTurnEncoder(float speed, float degreesToTurn, bool brakeMode)
 {
@@ -84,9 +84,9 @@ void sideTurnEncoder(float speed, float degreesToTurn, bool brakeMode)
 // we can add them together because one will always be zero. Turns off motors.
 //----------------------------------------------------------------------------------------------------
 //Inputs:
-//	speed   	Float	Speed of the right wheel
-//	degreesToTurn	Float	Distance to move
-//	brakeMode	Bool	True = Turn on brakes at the end;  False = Coast at the end
+//	speed   				Float		Speed of the wheels
+//	degreesToTurn		Float		degrees to turn
+//	brakeMode				Bool		True = Turn on brakes at the end;  False = Coast at the end
 //----------------------------------------------------------------------------------------------------
 
 void centerTurnEncoder(float speed, float degreesToTurn, bool brakeMode)

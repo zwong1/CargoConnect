@@ -30,9 +30,9 @@ task main()
 {
 
 	// Setup parameters that may be different on different robots
-	wheelDiameterInMM = 62.4;				// This is on the side of every lego wheel.
-	widthBetweenWheelsInMM = 96.72; 			// Width between wheels in mm.  Each lift arm width is 7.44mm wide
-	reflectedLightIntensityOnBlack = 10;			// Color sensor reading when reading black.
+	wheelDiameterInMM = 62.4;										// This is on the side of every lego wheel.
+	widthBetweenWheelsInMM = 96.72; 						// Width between wheels in mm.  Each lift arm width is 7.44mm wide
+	reflectedLightIntensityOnBlack = 10;				// Color sensor reading when reading black.
 	reflectedLightIntensityOnWhite = 100; 			// Color Sensor reading when reading white.
 	forwardMotorMovementIsPositive = false;  		// Do the encoders go posiitive when moving forward. (False = negative)
 
