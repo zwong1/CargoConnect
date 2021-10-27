@@ -26,7 +26,7 @@ Motors
 
 Driving Functions
 ----------------------------------------------------------------
-driveEncoderDistance(leftspeed, rightSpeed, inchesToMove, brakeMode)
+**driveEncoderDistance(leftspeed, rightSpeed, inchesToMove, brakeMode)**
 
 	leftSpeed	Float	Speed of left wheel
 	
@@ -38,7 +38,7 @@ driveEncoderDistance(leftspeed, rightSpeed, inchesToMove, brakeMode)
 	
 
 
-driveStraightEncoderDistance(speed, inchesToMove, brakeMode)
+**driveStraightEncoderDistance(speed, inchesToMove, brakeMode)**
 
 	speed		Float	speed of both wheels 
 	
@@ -47,7 +47,7 @@ driveStraightEncoderDistance(speed, inchesToMove, brakeMode)
 	brakeMode	Bool	True = Turn on brakes at the end;  False = Coast at the end
 
 
-sideTurnEncoder(speed, degreesToTurn, brakeMode)
+**sideTurnEncoder(speed, degreesToTurn, brakeMode)**
 
 	speed		Float	speed to turn the outer wheel
 	
@@ -56,7 +56,7 @@ sideTurnEncoder(speed, degreesToTurn, brakeMode)
 	brakeMode	Bool	True = Turn on brakes at the end;  False = Coast at the end
 
 
-centerTurnEncoder(speed, degreesToTurn, brakeMode)
+**centerTurnEncoder(speed, degreesToTurn, brakeMode)**
 
 	speed		Float	speed to turn one wheel forward and one wheel backwards
 	
@@ -65,7 +65,7 @@ centerTurnEncoder(speed, degreesToTurn, brakeMode)
 	brakeMode	Bool	True = Turn on brakes at the end;  False = Coast at the end
 
 
-driveStraightGyroDistance(direction, speed, inches, brakeMode)
+**driveStraightGyroDistance(direction, speed, inches, brakeMode)**
 
 	speed		Float	speed of both wheels 
 
@@ -76,7 +76,7 @@ driveStraightGyroDistance(direction, speed, inches, brakeMode)
 	brakeMode	Bool	True = Turn on brakes at the end;  False = Coast at the end
 
 
-centerTurnUsingGyro(speed, degreesToTurn, brakeMode)
+**centerTurnUsingGyro(speed, degreesToTurn, brakeMode)**
 
 	speed		Float	speed to turn one wheel forward and one wheel backwards
 
@@ -85,7 +85,7 @@ centerTurnUsingGyro(speed, degreesToTurn, brakeMode)
 	brakeMode	Bool	True = Turn on brakes at the end;  False = Coast at the end
 
 
-sideTurnUsingGyro(speed, degreesToTurn, brakeMode)
+**sideTurnUsingGyro(speed, degreesToTurn, brakeMode)**
 
 	speed		Float	speed to turn the outer wheel
 	
@@ -94,7 +94,7 @@ sideTurnUsingGyro(speed, degreesToTurn, brakeMode)
 	brakeMode	Bool	True = Turn on brakes at the end;  False = Coast at the end
 
 
-lineFollowForDistance(speed, inchesToMove, colorSensorToUse, edgeToUse, brakeMode)  
+**lineFollowForDistance(speed, inchesToMove, colorSensorToUse, edgeToUse, brakeMode) ** 
 
 	speed		Float	speed of both wheels 
 	
@@ -107,7 +107,7 @@ lineFollowForDistance(speed, inchesToMove, colorSensorToUse, edgeToUse, brakeMod
 	brakeMode	Bool	True = Turn on brakes at the end;  False = Coast at the end
 
     
-lineFollowUntilLine(speed, colorSensorToUse, edgeToUse, brakeMode, colorToLookFor)
+**lineFollowUntilLine(speed, colorSensorToUse, edgeToUse, brakeMode, colorToLookFor)**
 
 	speed 			Speed to Drive
 	
