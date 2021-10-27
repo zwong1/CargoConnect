@@ -11,12 +11,20 @@
 
 
 // Global Variables - These can be used anywhere in any function.  They are global in scope.
-// These need to be before the include functions so that they can be defined before the compiler wants to use them.  
+// These need to be before the include functions so that they can be defined before the compiler wants to use them.
 float wheelDiameterInMM;
 int reflectedLightIntensityOnBlack;
 int reflectedLightIntensityOnWhite;
 float widthBetweenWheelsInMM;
 bool forwardMotorMovementIsPositive;
+
+// Define variables to pass into functions to not have to use pointers.
+string leftSensor;
+string rightSensor;
+string leftEdge;
+string rightEdge;
+string black;
+string white;
 
 
 // Files to Include
@@ -38,6 +46,15 @@ task main()
 	forwardMotorMovementIsPositive = false;  		// Do the encoders go posiitive when moving forward. (False = negative)
 
 
+	// Setup the strings to pass in to the functions because we can't pass strings, but can pass variables.
+	leftSensor = "leftSensor";
+	rightSensor = "rightSensor";
+	leftEdge = "leftEdge";
+	rightEdge = "rightEdge";
+	black = "black";
+	white = "white";
+
+
 	// Reset the gyroscoe and wait 100ms to settle
 	resetGyro(gyro);
 	sleep(100);
@@ -46,15 +63,15 @@ task main()
 	driveStraightGyroDistance(50, 17, 0, false);
 
 	// Line follow for distance
-	lineFollowForDistance(15, 15.5, "rightSensor", "rightEdge", false);
+	lineFollowForDistance(15, 15.5, rightSensor, rightEdge, false);
 
 	// LIne follow until we see the white line
-	lineFollowUntilLine(10, "rightSensor", "rightEdge", "white", false);
+	lineFollowUntilLine(10, rightSensor, rightEdge, white, false);
 
 	// Line follow until we see the black line
-	lineFollowUntilLine(10, "rightSensor", "rightEdge", "black", true);
-	
-	
+	lineFollowUntilLine(10, rightSensor, rightEdge, black, true);
+
+
 
 
 }
