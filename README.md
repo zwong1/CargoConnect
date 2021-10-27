@@ -47,6 +47,7 @@ Driving Functions
 	brakeMode	Bool	True = Turn on brakes at the end;  False = Coast at the end
 
 
+
 **sideTurnEncoder(speed, degreesToTurn, brakeMode)**
 
 	speed		Float	speed to turn the outer wheel
@@ -56,6 +57,7 @@ Driving Functions
 	brakeMode	Bool	True = Turn on brakes at the end;  False = Coast at the end
 
 
+
 **centerTurnEncoder(speed, degreesToTurn, brakeMode)**
 
 	speed		Float	speed to turn one wheel forward and one wheel backwards
@@ -63,6 +65,7 @@ Driving Functions
 	degreesToTurn	Float	degrees to turn the robot
 	
 	brakeMode	Bool	True = Turn on brakes at the end;  False = Coast at the end
+
 
 
 **driveStraightGyroDistance(speed, inchesToMove, direction, brakeMode)**
@@ -76,6 +79,7 @@ Driving Functions
 	brakeMode	Bool	True = Turn on brakes at the end;  False = Coast at the end
 
 
+
 **centerTurnUsingGyro(speed, degreesToTurn, brakeMode)**
 
 	speed		Float	speed to turn one wheel forward and one wheel backwards
@@ -83,6 +87,7 @@ Driving Functions
 	degreesToTurn	Float	degrees to turn the robot
 	
 	brakeMode	Bool	True = Turn on brakes at the end;  False = Coast at the end
+
 
 
 **sideTurnUsingGyro(speed, degreesToTurn, brakeMode)**
@@ -94,27 +99,29 @@ Driving Functions
 	brakeMode	Bool	True = Turn on brakes at the end;  False = Coast at the end
 
 
-**lineFollowForDistance(speed, inchesToMove, colorSensorToUse, edgeToUse, brakeMode) ** 
+
+**lineFollowForDistance(speed, inchesToMove, colorSensorToUse, edgeToUse, brakeMode)**
 
 	speed		Float	speed of both wheels 
 	
 	inchesToMove	Float	Distance to move
 
-	colorSensorToUse	Color sensor used to line folllow - opposite for line detection		1=Left; 2 = Right        
+	colorSensorToUse Int	Color sensor used to line folllow - opposite for line detection		1=Left; 2 = Right        
 	
-	edgeToUse		follow on left edge or right edge					1 = left edge; 2 = right edge
+	edgeToUse	Int	follow on left edge or right edge					1 = left edge; 2 = right edge
 	
 	brakeMode	Bool	True = Turn on brakes at the end;  False = Coast at the end
+
 
     
 **lineFollowUntilLine(speed, colorSensorToUse, edgeToUse, colorToLookFor, brakeMode, )**
 
-	speed 			Speed to Drive
+	speed 		Float	Speed to Drive
 	
-	colorSensorToUse	Color sensor used to line folllow - opposite for line detection		1=Left; 2 = Right        
+	colorSensorToUse Int	Color sensor used to line folllow - opposite for line detection		1=Left; 2 = Right        
 	
-	edgeToUse		follow on left edge or right edge					1 = left edge; 2 = right edge
+	edgeToUse	Int	follow on left edge or right edge					1 = left edge; 2 = right edge
 	
-	colorToLookFor		Look for a white line or a black line					1 = White; 2 = Black 
+	colorToLookFor	Int	Look for a white line or a black line					1 = White; 2 = Black 
 	
-	brakeMode		Apply brakes or not							true; false
+	brakeMode	Bool	Apply brakes or not							true; false
