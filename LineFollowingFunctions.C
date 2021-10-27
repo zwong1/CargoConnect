@@ -1,11 +1,13 @@
 //----------------------------------------------------------------------------------------------------
-// Name:
+// Name:lineFollowForDistance
 //----------------------------------------------------------------------------------------------------
-// Description:
-//
+// Description: computes the midpoint, set motor encoder to 0, compute the rotations to move, compute 
+// degreesToMove, move forward until the encoder value is greater then the degreesToMove. We compute
+// the correction factor, detect what edge to be on, then turn off the drive motors and set brake mode.
 //----------------------------------------------------------------------------------------------------
-//Inputs:
-//
+//Inputs:     speed   		float   		speed we go at 
+//            inchesToMove  float   		inches we want to move
+//            brakeMode   	bool   			coast or brake  
 //----------------------------------------------------------------------------------------------------
 void lineFollowForDistance(float speed, float inchesToMove,  string colorSensorToUse, string edgeToUse, bool brakeMode)
 
@@ -89,14 +91,16 @@ void lineFollowForDistance(float speed, float inchesToMove,  string colorSensorT
 
 
 //----------------------------------------------------------------------------------------------------
-// Name:
+// Name: lineFollowUntilLine
 //----------------------------------------------------------------------------------------------------
-// Description:
-//
+// Description:   Computes Midpoint, sets the gain to increase when we go faster, computes whether we 
+// are stopping on white or black, we find the sensor we are not using to line follow, detect what edge
+// we are on, set the new drive speeds, and turn off the motors and set brake mode. 
 //----------------------------------------------------------------------------------------------------
 //Inputs:
-//
-//----------------------------------------------------------------------------------------------------
+//    speed 	Float 	speed we go at
+//    brakeMode Bool    coast or brake
+ /----------------------------------------------------------------------------------------------------
 void lineFollowUntilLine(float speed, string colorSensorToUse, string edgeToUse, string colorToLookFor, bool brakeMode)
 
 {
