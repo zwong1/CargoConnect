@@ -46,13 +46,13 @@ task main()
 	driveStraightGyroDistance(50, 17, 0, false);
 
 	// Line follow for distance
-	lineFollowForDistance(15, 15.5, 2, 2, false);
+	lineFollowForDistance(15, 15.5, "rightSensor", "rightEdge", false);
 
 	// LIne follow until we see the white line
-	lineFollowUntilLine(10, 2, 2, 1, false);
+	lineFollowUntilLine(10, "rightSensor", "rightEdge", "white", false);
 
 	// Line follow until we see the black line
-	lineFollowUntilLine(10, 2, 2, 2, false);
+	lineFollowUntilLine(10, "rightSensor", "rightEdge", "black", true);
 	
 	
 
