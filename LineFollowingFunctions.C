@@ -42,7 +42,7 @@ void lineFollowForDistance(float speed, float inchesToMove,  string colorSensorT
 	while (abs(getLeftMotorEncoder()) <= degreesToMove)
 	{
 
-		if (colorSensorToUse == "left")				// Use the left color sensor
+		if (colorSensorToUse == "leftSensor")				// Use the left color sensor
 		{
 			colorSensorReading = getColorReflected(leftColor);
 		}
@@ -59,7 +59,7 @@ void lineFollowForDistance(float speed, float inchesToMove,  string colorSensorT
 		correctionFactor = error * gain;
 
 		// detecting what edge you are on
-		if (edgeToUse == "left")		// 1 = left edge
+		if (edgeToUse == "leftEdge")		// 1 = left edge
 		{
 			speedLeft = speed - correctionFactor;
 			speedRight = speed + correctionFactor;
@@ -134,7 +134,7 @@ void lineFollowUntilLine(float speed, string colorSensorToUse, string edgeToUse,
 
 
 	// Get the initial current value based upon which sensor to use - Use the one not using for the line following
-	if (colorSensorToUse == "left")				// Use the left color sensor
+	if (colorSensorToUse == "leftSensor")				// Use the left color sensor
 		{
 			colorSensorDetecting = getColorReflected(rightColor);
 		}
@@ -158,7 +158,7 @@ void lineFollowUntilLine(float speed, string colorSensorToUse, string edgeToUse,
 	while (((colorToLookFor == "white") && ( colorSensorDetecting < lightLevelToLookFor)) + ((colorToLookFor != "white") && ( colorSensorDetecting > lightLevelToLookFor)))
 	{
 
-		if (colorSensorToUse == "left")				// Use the left color sensor
+		if (colorSensorToUse == "leftSensor")				// Use the left color sensor
 		{
 			colorSensorReading = getColorReflected(leftColor);
 		}
@@ -175,7 +175,7 @@ void lineFollowUntilLine(float speed, string colorSensorToUse, string edgeToUse,
 		correctionFactor = error * gain;
 
 		// detecting what edge you are on
-		if (edgeToUse == "left")		// 1 = left edge
+		if (edgeToUse == "leftEdge")		// 1 = left edge
 		{
 			speedLeft = speed - correctionFactor;
 			speedRight = speed + correctionFactor;
@@ -193,7 +193,7 @@ void lineFollowUntilLine(float speed, string colorSensorToUse, string edgeToUse,
 
 
 		// Get the current value based upon which sensor to use - Use the one not using for the line following
-		if (colorSensorToUse == "left")				// Use the left color sensor
+		if (colorSensorToUse == "leftSensor")				// Use the left color sensor
 		{
 			colorSensorDetecting = getColorReflected(rightColor);
 		}
