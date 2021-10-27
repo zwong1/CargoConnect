@@ -65,7 +65,7 @@ Driving Functions
 	brakeMode	Bool	True = Turn on brakes at the end;  False = Coast at the end
 
 
-**driveStraightGyroDistance(direction, speed, inches, brakeMode)**
+**driveStraightGyroDistance(speed, inchesToMove, direction, brakeMode)**
 
 	speed		Float	speed of both wheels 
 
@@ -107,7 +107,7 @@ Driving Functions
 	brakeMode	Bool	True = Turn on brakes at the end;  False = Coast at the end
 
     
-**lineFollowUntilLine(speed, colorSensorToUse, edgeToUse, colorToLookFor,brakeMode, )**
+**lineFollowUntilLine(speed, colorSensorToUse, edgeToUse, colorToLookFor, brakeMode, )**
 
 	speed 			Speed to Drive
 	
