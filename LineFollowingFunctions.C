@@ -7,7 +7,7 @@
 //Inputs:
 //
 //----------------------------------------------------------------------------------------------------
-void lineFollowForDistance(float inchesToMove, float speed, int colorSensorToUse, int edgeToUse, bool brakeMode)
+void lineFollowForDistance(float speed, float inchesToMove,  string colorSensorToUse, string edgeToUse, bool brakeMode)
 
 {
 
@@ -42,7 +42,7 @@ void lineFollowForDistance(float inchesToMove, float speed, int colorSensorToUse
 	while (abs(getLeftMotorEncoder()) <= degreesToMove)
 	{
 
-		if (colorSensorToUse == 1)				// Use the left color sensor
+		if (colorSensorToUse == "leftSensor")				// Use the left color sensor
 		{
 			colorSensorReading = getColorReflected(leftColor);
 		}
@@ -59,7 +59,7 @@ void lineFollowForDistance(float inchesToMove, float speed, int colorSensorToUse
 		correctionFactor = error * gain;
 
 		// detecting what edge you are on
-		if (edgeToUse == 1)		// 1 = left edge
+		if (edgeToUse == "leftEdge")		// 1 = left edge
 		{
 			speedLeft = speed - correctionFactor;
 			speedRight = speed + correctionFactor;
@@ -97,7 +97,7 @@ void lineFollowForDistance(float inchesToMove, float speed, int colorSensorToUse
 //Inputs:
 //
 //----------------------------------------------------------------------------------------------------
-void lineFollowUntilLine(float speed, int colorSensorToUse, int edgeToUse, bool brakeMode, int colorToLookFor)
+void lineFollowUntilLine(float speed, string colorSensorToUse, string edgeToUse, string colorToLookFor, bool brakeMode)
 
 {
 
@@ -121,7 +121,7 @@ void lineFollowUntilLine(float speed, int colorSensorToUse, int edgeToUse, bool 
 
 
 	// Compute the limtis for stopping;
-	if (colorToLookFor == 1)     // Look for white
+	if (colorToLookFor == "white")     // Look for white
 	  {
 	    lightLevelToLookFor = reflectedLightIntensityOnWhite - 10;
 	  }
@@ -134,7 +134,7 @@ void lineFollowUntilLine(float speed, int colorSensorToUse, int edgeToUse, bool 
 
 
 	// Get the initial current value based upon which sensor to use - Use the one not using for the line following
-	if (colorSensorToUse == 1)				// Use the left color sensor
+	if (colorSensorToUse == "leftSensor")				// Use the left color sensor
 		{
 			colorSensorDetecting = getColorReflected(rightColor);
 		}
@@ -155,10 +155,10 @@ void lineFollowUntilLine(float speed, int colorSensorToUse, int edgeToUse, bool 
 	// If looking for white, continue while the sensor is less than the limit.
 	// If looking for black, continue while the sensor is greater than the limit.
 	//	   Looking for White  and  Current Sensor Value < Limit  		or    Looking for Black  and   Current Sensor Value > Limit
-	while (((colorToLookFor == 1) && ( colorSensorDetecting < lightLevelToLookFor)) + ((colorToLookFor != 1) && ( colorSensorDetecting > lightLevelToLookFor)))
+	while (((colorToLookFor == "white") && ( colorSensorDetecting < lightLevelToLookFor)) + ((colorToLookFor != "white") && ( colorSensorDetecting > lightLevelToLookFor)))
 	{
 
-		if (colorSensorToUse == 1)				// Use the left color sensor
+		if (colorSensorToUse == "leftSensor")				// Use the left color sensor
 		{
 			colorSensorReading = getColorReflected(leftColor);
 		}
@@ -175,7 +175,7 @@ void lineFollowUntilLine(float speed, int colorSensorToUse, int edgeToUse, bool 
 		correctionFactor = error * gain;
 
 		// detecting what edge you are on
-		if (edgeToUse == 1)		// 1 = left edge
+		if (edgeToUse == "leftEdge")		// 1 = left edge
 		{
 			speedLeft = speed - correctionFactor;
 			speedRight = speed + correctionFactor;
@@ -193,7 +193,7 @@ void lineFollowUntilLine(float speed, int colorSensorToUse, int edgeToUse, bool 
 
 
 		// Get the current value based upon which sensor to use - Use the one not using for the line following
-		if (colorSensorToUse == 1)				// Use the left color sensor
+		if (colorSensorToUse == "leftSensor")				// Use the left color sensor
 		{
 			colorSensorDetecting = getColorReflected(rightColor);
 		}

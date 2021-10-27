@@ -26,30 +26,102 @@ Motors
 
 Driving Functions
 ----------------------------------------------------------------
-driveEncoderDistance(leftspeed, rightSpeed, inchesToMove, brakeMode)
+**driveEncoderDistance(leftspeed, rightSpeed, inchesToMove, brakeMode)**
 
-driveStraightEncoderDistance(speed, inchesToMove, brakeMode)
+	leftSpeed	Float	Speed of left wheel
+	
+	rightSpeed	Float	Speed of the right wheel
+	
+	inchesToMove	Float	Distance to move
+	
+	brakeMode	Bool	True = Turn on brakes at the end;  False = Coast at the end
+	
 
-sideTurnEncoder(speed, degreesToTurn, brakeMode)
 
-centerTurnEncoder(speed, degreesToTurn, brakeMode)
+**driveStraightEncoderDistance(speed, inchesToMove, brakeMode)**
 
-driveStraightGyroDistance(direction, speed, inches, brakeMode)
+	speed		Float	speed of both wheels 
+	
+	inchesToMove	Float	Distance to move
+	
+	brakeMode	Bool	True = Turn on brakes at the end;  False = Coast at the end
 
-centerTurnUsingGyro(degreesToTurn, speedOfTurn, brakeMode)
 
-sideTurnUsingGyro(degreesToTurn, speedOfTurn, brakeMode)
 
-lineFollowForDistance(inchesToMove, speed, colorSensorToUse, edgeToUse, brakeMode)  
+**sideTurnEncoder(speed, degreesToTurn, brakeMode)**
+
+	speed		Float	speed to turn the outer wheel
+	
+	degreesToTurn	Float	degrees to turn the robot
+	
+	brakeMode	Bool	True = Turn on brakes at the end;  False = Coast at the end
+
+
+
+**centerTurnEncoder(speed, degreesToTurn, brakeMode)**
+
+	speed		Float	speed to turn one wheel forward and one wheel backwards
+	
+	degreesToTurn	Float	degrees to turn the robot
+	
+	brakeMode	Bool	True = Turn on brakes at the end;  False = Coast at the end
+
+
+
+**driveStraightGyroDistance(speed, inchesToMove, direction, brakeMode)**
+
+	speed		Float	speed of both wheels 
+
+	inchesToMove	Float	Distance to move
+	
+	direction	float	Direction to head in using the gyroscope.  
+	
+	brakeMode	Bool	True = Turn on brakes at the end;  False = Coast at the end
+
+
+
+**centerTurnUsingGyro(speed, degreesToTurn, brakeMode)**
+
+	speed		Float	speed to turn one wheel forward and one wheel backwards
+
+	degreesToTurn	Float	degrees to turn the robot
+	
+	brakeMode	Bool	True = Turn on brakes at the end;  False = Coast at the end
+
+
+
+**sideTurnUsingGyro(speed, degreesToTurn, brakeMode)**
+
+	speed		Float	speed to turn the outer wheel
+	
+	degreesToTurn	Float	degrees to turn the robot
+	
+	brakeMode	Bool	True = Turn on brakes at the end;  False = Coast at the end
+
+
+
+**lineFollowForDistance(speed, inchesToMove, colorSensorToUse, edgeToUse, brakeMode)**
+
+	speed		Float	speed of both wheels 
+	
+	inchesToMove	Float	Distance to move
+
+	colorSensorToUse string	Color sensor used to line folllow - opposite for line detection		"left", "right"         
+	
+	edgeToUse	string	follow on left edge or right edge					"left", "right"   
+	
+	brakeMode	Bool	True = Turn on brakes at the end;  False = Coast at the end
+
+
     
-lineFollowUntilLine(speed, colorSensorToUse, edgeToUse, brakeMode, colorToLookFor)
+**lineFollowUntilLine(speed, colorSensorToUse, edgeToUse, colorToLookFor, brakeMode, )**
 
-	speed 			Speed to Drive
+	speed 		Float	Speed to Drive
 	
-	colorSensorToUse	Color sensor used to line folllow - opposite for line detection		1=Left; 2 = Right        
+	colorSensorToUse string	Color sensor used to line folllow - opposite for line detection		"left", "right"        
 	
-	edgeToUse		follow on left edge or right edge					1 = left edge; 2 = right edge
+	edgeToUse	string	follow on left edge or right edge					"left", "right"
 	
-	brakeMode		Apply brakes or not							true; false
+	colorToLookFor	Int	Look for a white line or a black line					"white", "black"  
 	
-	colorToLookFor		Look for a white line or a black line					1 = White; 2 = Black 
+	brakeMode	Bool	Apply brakes or not							true; false

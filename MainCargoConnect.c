@@ -11,6 +11,7 @@
 
 
 // Global Variables - These can be used anywhere in any function.  They are global in scope.
+// These need to be before the include functions so that they can be defined before the compiler wants to use them.  
 float wheelDiameterInMM;
 int reflectedLightIntensityOnBlack;
 int reflectedLightIntensityOnWhite;
@@ -42,16 +43,18 @@ task main()
 	sleep(100);
 
 	// Drive straight using the gyro to get on top of the line to follow
-	driveStraightGyroDistance(0, 50, 17, false);
+	driveStraightGyroDistance(50, 17, 0, false);
 
 	// Line follow for distance
-	lineFollowForDistance(15.5,15,2,2,false);
+	lineFollowForDistance(15, 15.5, "rightSensor", "rightEdge", false);
 
 	// LIne follow until we see the white line
-	lineFollowUntilLine(10, 2, 2, false, 1);
+	lineFollowUntilLine(10, "rightSensor", "rightEdge", "white", false);
 
 	// Line follow until we see the black line
-	lineFollowUntilLine(10, 2, 2, true, 2);
+	lineFollowUntilLine(10, "rightSensor", "rightEdge", "black", true);
+	
+	
 
 
 }
