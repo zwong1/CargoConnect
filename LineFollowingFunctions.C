@@ -97,7 +97,7 @@ void lineFollowForDistance(float speed, float inchesToMove,  string colorSensorT
 //Inputs:
 //
 //----------------------------------------------------------------------------------------------------
-void lineFollowUntilLine(float speed, int colorSensorToUse, int edgeToUse, int colorToLookFor, bool brakeMode)
+void lineFollowUntilLine(float speed, string colorSensorToUse, string edgeToUse, string colorToLookFor, bool brakeMode)
 
 {
 
