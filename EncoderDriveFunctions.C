@@ -61,13 +61,14 @@ void driveEncoderDistance(float leftspeed, float rightSpeed, float inchesToMove,
 
 
 //----------------------------------------------------------------------------------------------------
-// Name:    THis is a new description
+// Name:   driveStraightEncoderDistance
 //----------------------------------------------------------------------------------------------------
-// Description:
-//
+// Description: we always make sure that the roatations is positive and compute the numbers of degreesToMove
+// we remove the brakes and reset the motor encoders. we then turn off drive motors and set brake mode
 //----------------------------------------------------------------------------------------------------
-//Inputs:
-//
+//Inputs: speed    			float           speed we want to go at 
+//        inchesToMove      float           inches we want to move
+//        brakeMode         bool            coast or brake 
 //----------------------------------------------------------------------------------------------------
 void driveStraightEncoderDistance(float speed, float inchesToMove, bool brakeMode)
 {

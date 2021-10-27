@@ -11,8 +11,8 @@
 //----------------------------------------------------------------------------------------------------
 //Inputs:
 //	speed   				Float		Speed of the wheel to turn
-//	degreesToTurn		Float		degrees to turn
-//	brakeMode	Bool	True 		Turn on brakes at the end;  False = Coast at the end
+//	degreesToTurn		    Float		degrees to turn
+//	brakeMode	            Bool	  True = Turn on brakes at the end;  False = Coast at the end
 //----------------------------------------------------------------------------------------------------
 void sideTurnEncoder(float speed, float degreesToTurn, bool brakeMode)
 {
@@ -88,7 +88,7 @@ void sideTurnEncoder(float speed, float degreesToTurn, bool brakeMode)
 //----------------------------------------------------------------------------------------------------
 //Inputs:
 //	speed   				Float		Speed of the wheels
-//	degreesToTurn		Float		degrees to turn
+//	degreesToTurn		    Float		degrees to turn
 //	brakeMode				Bool		True = Turn on brakes at the end;  False = Coast at the end
 //----------------------------------------------------------------------------------------------------
 
