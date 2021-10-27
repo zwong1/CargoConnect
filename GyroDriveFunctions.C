@@ -1,11 +1,14 @@
 //----------------------------------------------------------------------------------------------------
-// Name:
+// Name: driveStraightGyroDistance
 //----------------------------------------------------------------------------------------------------
-// Description:
-//
+// Description: we increase the gain if the speed is greater. Then we remove the breaks and reset motor
+// encoders. We get the setpount the we wand to go in - the actual current reading. We then compute the 
+// correctionFactor (speedleft = speed + correctionFactor      speedRight = speed - correction factor) 
+// we then turn off drive motors and set the brake Mode 
 //----------------------------------------------------------------------------------------------------
-//Inputs:
-//
+//Inputs:   speed    		Float       	speed we want to go at 
+//          inchesToMove    Float           inches we want to movedata
+//          brakeMode       Bool            coast or brake 
 //----------------------------------------------------------------------------------------------------
 void driveStraightGyroDistance(float speed, float inchesToMove, float direction, bool brakeMode)
 {
@@ -60,13 +63,16 @@ void driveStraightGyroDistance(float speed, float inchesToMove, float direction,
 
 
 //----------------------------------------------------------------------------------------------------
-// Name:
+// Name: centerTurnUsingGyro
 //----------------------------------------------------------------------------------------------------
-// Description:
-//
+// Description: we read the start value of the gyro, and we compute the end reading(the number we want 
+// the gyro to be reading at the end). If the degreesToTurn is great then 0 we are turning to the right.
+// If the degreesToTurn is less then 0, we are turning to the left. Once it gets to that number, we turn
+// off drive motors and set brakeMode to brake. 
 //----------------------------------------------------------------------------------------------------
-//Inputs:
-//
+//Inputs:    speed    		Float    		speed we want to go at
+//           degreesToTurn  Float  			degrees we want to turn 
+//           brakeMode      Bool            coast or brake
 //----------------------------------------------------------------------------------------------------
 void centerTurnUsingGyro(float speed, float degreesToTurn,  bool brakeMode)
 {
@@ -130,13 +136,15 @@ void centerTurnUsingGyro(float speed, float degreesToTurn,  bool brakeMode)
 
 
 //----------------------------------------------------------------------------------------------------
-// Name:
+// Name: sideTurnUsingGyro
 //----------------------------------------------------------------------------------------------------
-// Description:
-//
+// Description: get the gyrosocpe reading at the very start, compute the end reading, if the degreesToTurn
+// is greater that 0 we are turning to the right, if it is less then, we are turning to the left. Then
+// we turn off drive motors and set brake mode. 
 //----------------------------------------------------------------------------------------------------
-//Inputs:
-//
+//Inputs:     speed   		Float   		speed we want to go at 
+//            degreesToTurn Float    		degrees we want to turn
+//            brakeMode     Bool            coast or brake
 //----------------------------------------------------------------------------------------------------
 void sideTurnUsingGyro(float speed, float degreesToTurn,  bool brakeMode)
 {
