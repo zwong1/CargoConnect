@@ -27,6 +27,10 @@ Motors
 Driving Functions
 ----------------------------------------------------------------
 driveEncoderDistance(leftspeed, rightSpeed, inchesToMove, brakeMode)
+	leftSpeed	Float	Speed of left wheel
+	rightSpeed	Float	Speed of the right wheel
+	rotations	Float	Distance to move
+	brakeMode	Bool	True = Turn on brakes at the end;  False = Coast at the end
 
 driveStraightEncoderDistance(speed, inchesToMove, brakeMode)
 
