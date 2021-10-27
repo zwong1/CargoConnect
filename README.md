@@ -106,9 +106,9 @@ Driving Functions
 	
 	inchesToMove	Float	Distance to move
 
-	colorSensorToUse Int	Color sensor used to line folllow - opposite for line detection		1=Left; 2 = Right        
+	colorSensorToUse string	Color sensor used to line folllow - opposite for line detection		"left", "right"         
 	
-	edgeToUse	Int	follow on left edge or right edge					1 = left edge; 2 = right edge
+	edgeToUse	string	follow on left edge or right edge					"left", "right"   
 	
 	brakeMode	Bool	True = Turn on brakes at the end;  False = Coast at the end
 
@@ -118,10 +118,10 @@ Driving Functions
 
 	speed 		Float	Speed to Drive
 	
-	colorSensorToUse Int	Color sensor used to line folllow - opposite for line detection		1=Left; 2 = Right        
+	colorSensorToUse string	Color sensor used to line folllow - opposite for line detection		"left", "right"        
 	
-	edgeToUse	Int	follow on left edge or right edge					1 = left edge; 2 = right edge
+	edgeToUse	string	follow on left edge or right edge					"left", "right"
 	
-	colorToLookFor	Int	Look for a white line or a black line					1 = White; 2 = Black 
+	colorToLookFor	Int	Look for a white line or a black line					"white", "black"  
 	
 	brakeMode	Bool	Apply brakes or not							true; false
