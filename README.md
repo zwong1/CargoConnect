@@ -107,7 +107,7 @@ Driving Functions
 	brakeMode	Bool	True = Turn on brakes at the end;  False = Coast at the end
 
     
-**lineFollowUntilLine(speed, colorSensorToUse, edgeToUse, brakeMode, colorToLookFor)**
+**lineFollowUntilLine(speed, colorSensorToUse, edgeToUse, colorToLookFor,brakeMode, )**
 
 	speed 			Speed to Drive
 	
@@ -115,6 +115,6 @@ Driving Functions
 	
 	edgeToUse		follow on left edge or right edge					1 = left edge; 2 = right edge
 	
-	brakeMode		Apply brakes or not							true; false
-	
 	colorToLookFor		Look for a white line or a black line					1 = White; 2 = Black 
+	
+	brakeMode		Apply brakes or not							true; false
