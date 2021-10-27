@@ -11,6 +11,7 @@
 
 
 // Global Variables - These can be used anywhere in any function.  They are global in scope.
+// These need to be before the include functions so that they can be defined before the compiler wants to use them.  
 float wheelDiameterInMM;
 int reflectedLightIntensityOnBlack;
 int reflectedLightIntensityOnWhite;
