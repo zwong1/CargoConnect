@@ -7,7 +7,7 @@
 //Inputs:
 //
 //----------------------------------------------------------------------------------------------------
-void driveStraightGyroDistance(float direction, float speed, float inches, bool brakeMode)
+void driveStraightGyroDistance(float speed, float inchesToMove, float direction, bool brakeMode)
 {
 
 	// Dimensioning variables
@@ -20,7 +20,7 @@ void driveStraightGyroDistance(float direction, float speed, float inches, bool 
 	float rotations;
 
 
-	rotations = inches / 7.717922162;
+	rotations = inchesToMove / 7.717922162;
 
 	// Increase the gain if the speed is greater
 	gain = .01 * speed;
@@ -68,7 +68,7 @@ void driveStraightGyroDistance(float direction, float speed, float inches, bool 
 //Inputs:
 //
 //----------------------------------------------------------------------------------------------------
-void centerTurnUsingGyro(float degreesToTurn, float speedOfTurn, bool brakeMode)
+void centerTurnUsingGyro(float speed, float degreesToTurn,  bool brakeMode)
 {
 
 	float gyroStartReading;							// The start value of the gyro
@@ -138,7 +138,7 @@ void centerTurnUsingGyro(float degreesToTurn, float speedOfTurn, bool brakeMode)
 //Inputs:
 //
 //----------------------------------------------------------------------------------------------------
-void sideTurnUsingGyro(float degreesToTurn, float speedOfTurn, bool brakeMode)
+void sideTurnUsingGyro(float speed, float degreesToTurn,  bool brakeMode)
 {
 
 	float gyroStartReading;							// The start value of the gyro
