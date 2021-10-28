@@ -6,7 +6,9 @@
 // the correction factor, detect what edge to be on, then turn off the drive motors and set brake mode.
 //----------------------------------------------------------------------------------------------------
 //Inputs:     speed   		float   		speed we go at 
-//            inchesToMove  float   		inches we want to move
+//            inchesToMove  	float   		inches we want to move
+//	      colorSenorToUse	string			use variable leftSensor or rightSensor to pass in. 
+//   	      edgeToUse		string			use variable leftEdge or rightEdge to pass in.  
 //            brakeMode   	bool   			coast or brake  
 //----------------------------------------------------------------------------------------------------
 void lineFollowForDistance(float speed, float inchesToMove,  string colorSensorToUse, string edgeToUse, bool brakeMode)
@@ -98,9 +100,12 @@ void lineFollowForDistance(float speed, float inchesToMove,  string colorSensorT
 // we are on, set the new drive speeds, and turn off the motors and set brake mode. 
 //----------------------------------------------------------------------------------------------------
 //Inputs:
-//    speed 	Float 	speed we go at
-//    brakeMode Bool    coast or brake
- /----------------------------------------------------------------------------------------------------
+//    speed 		Float 		speed we go at
+//    colorSenorToUse	string		use variable -  leftSensor or rightSensor  
+//    edgeToUse		string		use variable - leftEdge or rightEdge 
+//    colorToLookFor	string  	use variable - white or black 
+//    brakeMode 	Bool    	coast or brake
+//----------------------------------------------------------------------------------------------------
 void lineFollowUntilLine(float speed, string colorSensorToUse, string edgeToUse, string colorToLookFor, bool brakeMode)
 
 {
