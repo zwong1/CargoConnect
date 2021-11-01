@@ -54,9 +54,10 @@ void driveStraightGyroDistance(float speed, float inchesToMove, float direction,
 	}
 
 
+	// Stop Motors
 	turnOffDriveMotors();
 
-
+	// Apply brakes if selected
 	setBrakeMode(brakeMode);
 
 }
@@ -120,12 +121,12 @@ void centerTurnUsingGyro(float speed, float degreesToTurn,  bool brakeMode)
 	}
 
 	
+	// Stop Motors
 	turnOffDriveMotors();
 
-
+	// Apply brakes if selected
 	setBrakeMode(brakeMode);
 	
-
 
 }
 
@@ -153,12 +154,12 @@ void sideTurnUsingGyro(float speed, float degreesToTurn,  bool brakeMode)
 	// Get the starting gyroscope reading
 	gyroStartReading = getGyroDegrees(gyro);
 
-	// Compute the end reading
 
-// the constant 10 will change with speed because momentum increases with speed
 
 	if (degreesToTurn > 0)												// Turning to the right
 	{
+		
+		// Compute the end reading
 		gyroEndReading = gyroStartReading + degreesToTurn - momentum;
 		
 		setMotorSpeed(leftDrive, speed);
@@ -173,6 +174,8 @@ void sideTurnUsingGyro(float speed, float degreesToTurn,  bool brakeMode)
 	}
 	else														// Turning to the left
 	{
+		
+		// Compute the end reading
 		gyroEndReading = gyroStartReading + degreesToTurn + momentum;
 
 		setMotorSpeed(leftDrive, 0);
@@ -186,10 +189,10 @@ void sideTurnUsingGyro(float speed, float degreesToTurn,  bool brakeMode)
 
 	}
 
-	
+	// Stop Motors
 	turnOffDriveMotors();
 
-
+	// Apply brakes if selected
 	setBrakeMode(brakeMode);
 
 
