@@ -170,9 +170,9 @@ void setBrakeMode(bool brakeMode)
 //	
 //----------------------------------------------------------------------------------------------------
 //Inputs:  
-//		leftSpeed 		Float 	speed of the left motor
+//	leftSpeed 		Float 	speed of the left motor
 //      rightSpeed		Float 	speed of the right motor
-//      seconds         Float   seconds   
+//      seconds         	Float   seconds   
 //----------------------------------------------------------------------------------------------------
 void driveForTime(float leftSpeed, float rightSpeed, float seconds)
 {
