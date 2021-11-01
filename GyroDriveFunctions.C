@@ -101,11 +101,6 @@ void centerTurnUsingGyro(float speed, float degreesToTurn,  bool brakeMode)
 
 		}
 		
-		turnOffDriveMotors();
-
-
-		setBrakeMode(brakeMode);
-
 
 	}
 	else																				// Turning to the left
@@ -122,15 +117,14 @@ void centerTurnUsingGyro(float speed, float degreesToTurn,  bool brakeMode)
 		}
 
 
-		turnOffDriveMotors();
-
-
-		setBrakeMode(brakeMode);
-
-
-
 	}
 
+	
+	turnOffDriveMotors();
+
+
+	setBrakeMode(brakeMode);
+	
 
 
 }
@@ -165,8 +159,8 @@ void sideTurnUsingGyro(float speed, float degreesToTurn,  bool brakeMode)
 
 	if (degreesToTurn > 0)												// Turning to the right
 	{
-		gyroEndReading = gyroStartReading + degreesToTurn - momentum; // If the gyro reads negative degrees, then the end reading will be wrong, it will also be wrong if the degrees to turn
-	// is less than 0
+		gyroEndReading = gyroStartReading + degreesToTurn - momentum;
+		
 		setMotorSpeed(leftDrive, speed);
 		setMotorSpeed(rightDrive, 0);
 
@@ -176,16 +170,10 @@ void sideTurnUsingGyro(float speed, float degreesToTurn,  bool brakeMode)
 		}
 
 
-		turnOffDriveMotors();
-
-
-		setBrakeMode(brakeMode);
-
-
 	}
-	else																// Turning to the left
+	else														// Turning to the left
 	{
-		gyroEndReading = abs(gyroStartReading) - degreesToTurn + 10;
+		gyroEndReading = gyroStartReading + degreesToTurn + momentum;
 
 		setMotorSpeed(leftDrive, 0);
 		setMotorSpeed(rightDrive, speed);
@@ -196,12 +184,13 @@ void sideTurnUsingGyro(float speed, float degreesToTurn,  bool brakeMode)
 		}
 
 
+	}
 
+	
 	turnOffDriveMotors();
 
 
 	setBrakeMode(brakeMode);
-	}
 
 
 }
