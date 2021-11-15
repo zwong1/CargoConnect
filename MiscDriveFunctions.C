@@ -19,7 +19,7 @@ void turnOffDriveMotors()
 // Name: getLeftMotorEncoder
 //----------------------------------------------------------------------------------------------------
 // Description:
-//	Return the left motor encoder.   Because the encoder is backwards, we use this function to 
+//	Return the left motor encoder.   Because the encoder is backwards, we use this function to
 //	return the ngative.
 //----------------------------------------------------------------------------------------------------
 //Inputs:         None
@@ -36,7 +36,7 @@ float getLeftMotorEncoder()
 // Name: getRightMotorEncoder
 //----------------------------------------------------------------------------------------------------
 // Description:  reads the number off of the right motor encoder
-//	
+//
 //----------------------------------------------------------------------------------------------------
 //Inputs:       None
 //
@@ -52,7 +52,7 @@ float getRightMotorEncoder()
 // Name: setDriveMotorsToBrake
 //----------------------------------------------------------------------------------------------------
 // Description: Makes motors brake
-//	
+//
 //----------------------------------------------------------------------------------------------------
 //Inputs:   None
 //
@@ -69,7 +69,7 @@ void setDriveMotorsToBrake()
 // Name: setDriveMotorsToBrake
 //----------------------------------------------------------------------------------------------------
 // Description:        sets all the drive motors to brake
-//	
+//
 //----------------------------------------------------------------------------------------------------
 //Inputs:          None
 //
@@ -85,8 +85,8 @@ void setDriveMotorsToCoast()
 //----------------------------------------------------------------------------------------------------
 // Name: setAllMotorsToCoast
 //----------------------------------------------------------------------------------------------------
-// Description: sets all of the motors to coast 
-//	
+// Description: sets all of the motors to coast
+//
 //----------------------------------------------------------------------------------------------------
 //Inputs:
 //              None
@@ -104,7 +104,7 @@ void setAllMotorsToCoast()
 // Name: resetDriveMotorEncoders
 //----------------------------------------------------------------------------------------------------
 // Description:       resets all of the drive motor encoders to 0
-//	
+//
 //----------------------------------------------------------------------------------------------------
 //Inputs:        None
 //
@@ -120,7 +120,7 @@ void resetDriveMotorEncoders()
 // Name: resetAllMotorEncoders
 //----------------------------------------------------------------------------------------------------
 // Description:     all motor encoders reset to 0
-//	
+//
 //----------------------------------------------------------------------------------------------------
 //Inputs:               None
 //
@@ -138,10 +138,10 @@ void resetAllMotorEncoders()
 // Name: setBrakeMode
 //----------------------------------------------------------------------------------------------------
 // Description: sets the brake mode to coast or brake
-//	
+//
 //----------------------------------------------------------------------------------------------------
 //Inputs:
-//        brakeMode 	bool 	coast or brake 
+//        brakeMode 	bool 	coast or brake
 //----------------------------------------------------------------------------------------------------
 void setBrakeMode(bool brakeMode)
 {
@@ -166,33 +166,33 @@ void setBrakeMode(bool brakeMode)
 //----------------------------------------------------------------------------------------------------
 // Name: driveForTime
 //----------------------------------------------------------------------------------------------------
-// Description: Drives for a certain period of time 
-//	
+// Description: Drives for a certain period of time
+//
 //----------------------------------------------------------------------------------------------------
-//Inputs:  
+//Inputs:
 //	leftSpeed 		Float 	speed of the left motor
 //      rightSpeed		Float 	speed of the right motor
-//      seconds         	Float   seconds   
+//      seconds         	Float   seconds
 //----------------------------------------------------------------------------------------------------
 void driveForTime(float leftSpeed, float rightSpeed, float seconds)
 {
 
-	
+
 	// set the motor speed
 	setMotorSpeed(leftDrive, leftSpeed);
 	setMotorSpeed(rightDrive, rightSpeed);
-	
-	
-	// wait for a period of time 
-	
-	sleep (seconds * 1000):
-	
-	
-	// stop the motors 
+
+
+	// wait for a period of time
+
+	sleep (seconds * 1000);
+
+
+	// stop the motors
 	setMotorSpeed(leftDrive, 0);
 	setMotorSpeed(rightDrive, 0);
-	
-	
+
+
 
 }
 
@@ -204,8 +204,8 @@ void driveForTime(float leftSpeed, float rightSpeed, float seconds)
 //----------------------------------------------------------------------------------------------------
 // Name: cleanWheels
 //----------------------------------------------------------------------------------------------------
-// Description: Motors go 100% for 10 seconds 
-//	
+// Description: Motors go 100% for 10 seconds
+//
 //----------------------------------------------------------------------------------------------------
 //Inputs: None
 //
@@ -214,7 +214,7 @@ void cleanWheels()
 {
 
 
-	driveForTime (100,100,10):
+	driveForTime (100,100,10);
 
 
 
