@@ -16,6 +16,7 @@ void setupGlobalVariables()
 	rightEdge = "rightEdge";
 	black = "black";
 	white = "white";
+	grey = "grey";
 
 
 }

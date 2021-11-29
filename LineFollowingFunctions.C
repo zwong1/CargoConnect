@@ -29,7 +29,15 @@ void lineFollowForDistance(float speed, float inchesToMove,  string colorSensorT
 	// Compute the midpoint with the global variables.
 	midPoint = (reflectedLightIntensityOnBlack + reflectedLightIntensityOnWhite) / 2;
 
-	gain = .01 * speed;
+	// Set the gain based upon the speed
+	if (speed <= 15)
+	{
+		gain = .1 ;
+	}
+	else
+	{
+		gain = speed * .01 ;
+	}
 
 
 	// set motor encoder to 0
@@ -154,8 +162,6 @@ void lineFollowUntilLine(float speed, string colorSensorToUse, string edgeToUse,
 
 
 
-
-
 	/* move forward until the encoder value is greater then the degrees to move
 		&&  	Logical And
 		+	Logical Or
@@ -222,5 +228,102 @@ void lineFollowUntilLine(float speed, string colorSensorToUse, string edgeToUse,
 	// Set brake mode
 	setBrakeMode(brakeMode);
 
+
+}
+
+
+void sideTurnUntilLine(float speed, string colorSensorToUse, string colorToLookFor, bool brakeMode)
+{
+
+	float lightLevelToLookFor;
+	float colorSensorDetecting;
+	bool foundLine;
+
+
+	// Compute the limtis for stopping;
+	if (colorToLookFor == "white")     // Look for white
+  {
+    lightLevelToLookFor = reflectedLightIntensityOnWhite - 10;
+  }
+  else if (colorToLookFor == "black")     // Look for black
+  {
+    lightLevelToLookFor = reflectedLightIntensityOnBlack + 10;
+  }
+  else
+	{
+    lightLevelToLookFor = ((reflectedLightIntensityOnWhite + reflectedLightIntensityOnBlack) / 2);
+
+	}
+
+
+
+	// Get the initial current value based upon which sensor to use - Use the one not using for the line following
+	if (colorSensorToUse == "leftSensor")				// Use the left color sensor
+	{
+		colorSensorDetecting = getColorReflected(leftColor);
+	}
+	else																				// Use the right color sensor
+	{
+		colorSensorDetecting = getColorReflected(rightColor);
+	}
+
+
+	if (speed > 0)					// Right Turn
+	{
+		setMotorSpeed(leftDrive, speed);
+		setMotorSpeed(rightDrive, 0);
+
+	}
+	else
+	{
+		setMotorSpeed(leftDrive, 0);
+		setMotorSpeed(rightDrive, -speed);
+
+	}
+
+	foundLine = false;
+
+
+	/* move forward until the encoder value is greater then the degrees to move
+		&&  	Logical And
+		+			Logical Or
+		!=  	Not Equal To
+	*/
+	// If looking for white, continue while the sensor is less than the limit.
+	// If looking for black, continue while the sensor is greater than the limit.
+	//	   Looking for White  and  Current Sensor Value < Limit  		or    Looking for Black  and   Current Sensor Value > Limit
+	while (!foundLine)
+	{
+
+		if (colorSensorToUse == "leftSensor")				// Use the left color sensor
+		{
+			colorSensorDetecting = getColorReflected(leftColor);
+		}
+		else														// Use the right color sensor
+		{
+			colorSensorDetecting = getColorReflected(rightColor);
+		}
+
+		// Dtecting if we found the line
+		if (colorToLookFor == "white")
+		{
+			if (colorSensorDetecting > lightLevelToLookFor) foundLine = true;
+		}
+		else if (colorToLookFor == "black")
+		{
+			if (colorSensorDetecting < lightLevelToLookFor) foundLine = true;
+		}
+		else				//Assume grey
+		{
+			if ((colorSensorDetecting > lightLevelToLookFor - 10) && (colorSensorDetecting < lightLevelToLookFor + 10))  foundLine = true;
+		}
+
+	}
+
+	// Turn off motors
+	turnOffDriveMotors();
+
+	// Set brake mode
+	setBrakeMode(brakeMode);
 
 }

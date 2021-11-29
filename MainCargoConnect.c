@@ -24,6 +24,7 @@ string rightSensor;
 string leftEdge;
 string rightEdge;
 string black;
+string grey;
 string white;
 
 
@@ -60,6 +61,9 @@ void displayMissionName(int missionIndex)
 
 task main()
 {
+
+	// Setup Global Variables
+	setupGlobalVariables();
 
 	// Reset the gyro when the program starts
 	resetGyro(gyro);

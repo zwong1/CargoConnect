@@ -221,3 +221,89 @@ void cleanWheels()
 
 
 }
+
+
+void moveLeftAttachmentMotorDegrees (float speed, float degreesToMove, bool brakeMode)
+{
+
+  // if degrees is negative, set the speed to negative and make the degree a positive value.
+  if (degreesToMove < 0)
+	{
+		speed  = -speed;
+		degreesToMove = -degreesToMove;
+	}
+
+ 	// Reset the motor encoder
+ 	resetMotorEncoder(leftAttachment);
+
+  // Start the motor
+	setMotorSpeed(leftAttachment, speed);
+
+	// read the motor encoder
+	while (abs(getMotorEncoder(leftAttachment)) < degreesToMove )
+  {
+
+  }
+
+  // Stop the motor
+	setMotorSpeed(leftAttachment, 0);
+
+
+	// if the brake needs to applied, set the brake
+	if (brakeMode)
+	{
+		// Set the brakes on the drive motors
+		setMotorBrakeMode(leftAttachment, motorBrake);
+	}
+	else
+	{
+		// Set the motors to coast
+		setMotorBrakeMode(leftAttachment,motorCoast);
+	}
+
+
+
+}
+
+
+void moveRightAttachmentMotorDegrees (float speed, float degreesToMove, bool brakeMode)
+{
+
+  // if degrees is negative, set the speed to negative and make the degree a positive value.
+  if (degreesToMove < 0)
+	{
+		speed  = -speed;
+		degreesToMove = -degreesToMove;
+	}
+
+ 	// Reset the motor encoder
+ 	resetMotorEncoder(rightAttachment);
+
+  // Start the motor
+	setMotorSpeed(rightAttachment, speed);
+
+	// read the motor encoder
+	while (abs(getMotorEncoder(rightAttachment)) < degreesToMove )
+  {
+
+  }
+
+  // Stop the motor
+	setMotorSpeed(rightAttachment, 0);
+
+
+	// if the brake needs to applied, set the brake
+	if (brakeMode)
+	{
+		// Set the brakes on the drive motors
+		setMotorBrakeMode(rightAttachment, motorBrake);
+	}
+	else
+	{
+		// Set the motors to coast
+		setMotorBrakeMode(rightAttachment,motorCoast);
+	}
+
+
+
+}
