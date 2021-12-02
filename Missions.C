@@ -28,7 +28,21 @@ void southWallMission()
 // This does the missions on the east wall (Hellicopter, Cargo Ship)
 void eastWallMission()
 {
-
+driveStraightGyroDistance(30,24,0,true);
+centerTurnUsingGyro(25,90,true);
+driveEncoderDistance(50,50,20,true);
+lineFollowForDistance(30,5,rightSensor,rightEdge,true);
+lineFollowUntilLine(20,leftSensor,leftEdge,white,true);
+lineFollowUntilLine(20,leftSensor,leftEdge,black,true);
+sideTurnUsingGyro(20,-90,true);
+lineFollowUntilLine(20,rightSensor,rightEdge,white,true);
+lineFollowUntilLine(20,rightSensor,rightEdge,black,true);
+driveEncoderDistance(-20,-20,1,true);
+moveLeftAttachmentMotorDegrees (50,-90,true);
+centerTurnUsingGyro(25,90,true);
+driveEncoderDistance(30,30,4,true);
+driveEncoderDistance(-30,-30,4,true);
+moveLeftAttachmentMotorDegrees (50,90,true);
 
 
 }
